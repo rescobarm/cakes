@@ -20,6 +20,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: gh-pages # El branch donde se publicará la página
-        folder: ../ # La carpeta donde está tu archivo HTML
+        folder: . # La carpeta donde está tu archivo HTML
         token: ${{ secrets.GITHUB_TOKEN }} # El token para autorizar la acción
 
