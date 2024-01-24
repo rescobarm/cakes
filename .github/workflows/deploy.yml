@@ -1,0 +1,25 @@
+name: gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: 
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    # Asume que tu archivo HTML está en la carpeta 'public'
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages # El branch donde se publicará la página
+        folder: public # La carpeta donde está tu archivo HTML
+        token: ${{ secrets.GITHUB_TOKEN }} # El token para autorizar la acción
+
